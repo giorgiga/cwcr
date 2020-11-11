@@ -13,9 +13,9 @@ fisher add giorgiga/cwcr
 ### Manually
 
 ```fish
-curl -Lo ~/.config/fish/conf.d/cwcr.fish  --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/master/conf.d/cwcr.fish
-curl -Lo ~/.config/fish/functions/cw.fish --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/master/functions/cw.fish
-curl -Lo ~/.config/fish/functions/cr.fish --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/master/functions/cr.fish
+curl -Lo ~/.config/fish/conf.d/cwcr.fish  --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/main/conf.d/cwcr.fish
+curl -Lo ~/.config/fish/functions/cw.fish --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/main/functions/cw.fish
+curl -Lo ~/.config/fish/functions/cr.fish --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/main/functions/cr.fish
 ```
 
 ## Dependencies
@@ -24,7 +24,7 @@ In order for *cwcr* to work, you'll need:
 
 * `wl-clipboard`, if you use Wayland
 * `xcopy` and/or `xsel`, if you use X11
-* `perl` must be available
+* `perl` (which you should have already)
 
 ## Usage
 
