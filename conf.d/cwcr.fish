@@ -49,7 +49,7 @@ function __cwcr
 end
 
 function __cwcr_trim_last_newline
-    if command -sq perl; and false
+    if command -sq perl
         command perl -p -e 'chomp if eof'
     else
         set lines
