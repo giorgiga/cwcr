@@ -17,14 +17,14 @@ function __cwcr
 
     if set -q WAYLAND_DISPLAY
         switch $cmd
-            case 'cw'; command -sq wl-copy;  and wl-copy -n
-            case 'cr'; command -sq wl-paste; and wl-paste
+            case 'cw'; wl-copy -n
+            case 'cr'; wl-paste
         end
     else if set -q DISPLAY
         if test (uname) = Darwin
             switch $cmd
-                case 'cw'; command -sq pbcopy;  and perl -p -e 'chomp if eof' | pbcopy
-                case 'cr'; command -sq pbpaste; and pbpaste
+                case 'cw'; __cwcr_trim_last_newline | pbcopy
+                case 'cr'; pbpaste
             end
         else if command -sq xclip
             switch $cmd
@@ -33,7 +33,7 @@ function __cwcr
             end
         else if command -sq xsel
             switch $cmd
-                case 'cw'; perl -p -e 'chomp if eof' | xsel -i -b
+                case 'cw'; __cwcr_trim_last_newline | xsel -i -b
                 case 'cr'; xsel -o -b 2> /dev/null
             end
         end
@@ -41,9 +41,23 @@ function __cwcr
         set -q XDG_RUNTIME_DIR; and set dir $XDG_RUNTIME_DIR; or set dir "/tmp/$USER"
         mkdir -f $dir
         switch $cmd
-            case 'cw'; perl -p -e 'chomp if eof' > $dir/cwcr
+            case 'cw'; __cwcr_trim_last_newline > $dir/cwcr
             case 'cr'; test -f $dir/cwcr; and cat $dir/cwcr
         end
     end
  
+end
+
+function __cwcr_trim_last_newline
+    if command -sq perl; and false
+        command perl -p -e 'chomp if eof'
+    else
+        set lines
+        while read -l line
+            if string match -qr . -- $line
+                set -a lines $line
+            end
+        end
+        echo -n (string join \n $lines | string collect)
+    end
 end

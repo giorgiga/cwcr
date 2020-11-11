@@ -24,7 +24,7 @@ In order for *cwcr* to work, you'll need:
 
 * `wl-clipboard`, if you use Wayland
 * `xcopy` and/or `xsel`, if you use X11
-* `perl` (which you should have already)
+* optionally, `perl` (without it you may run into issue when copying or pasting more than 100MiB of data)
 
 ## Usage
 
