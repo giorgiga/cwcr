@@ -6,16 +6,19 @@
 
 ### Using [Fisher](https://github.com/jorgebucaran/fisher)
 
-```console
+```fish
 fisher install giorgiga/cwcr
 ```
 
 ### Manually
 
 ```fish
-curl -Lo ~/.config/fish/conf.d/cwcr.fish  --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/main/conf.d/cwcr.fish
-curl -Lo ~/.config/fish/functions/cw.fish --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/main/functions/cw.fish
-curl -Lo ~/.config/fish/functions/cr.fish --create-dirs https://raw.githubusercontent.com/giorgiga/cwcr/main/functions/cr.fish
+curl -Lo ~/.config/fish/conf.d/cwcr.fish  --create-dirs \
+     https://raw.githubusercontent.com/giorgiga/cwcr/main/conf.d/cwcr.fish
+curl -Lo ~/.config/fish/functions/cw.fish --create-dirs \
+     https://raw.githubusercontent.com/giorgiga/cwcr/main/functions/cw.fish
+curl -Lo ~/.config/fish/functions/cr.fish --create-dirs \
+     https://raw.githubusercontent.com/giorgiga/cwcr/main/functions/cr.fish
 ```
 
 ## Dependencies
