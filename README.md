@@ -6,8 +6,8 @@
 
 ### Using [Fisher](https://github.com/jorgebucaran/fisher)
 
-```fish
-fisher add giorgiga/cwcr
+```console
+fisher install giorgiga/cwcr
 ```
 
 ### Manually
