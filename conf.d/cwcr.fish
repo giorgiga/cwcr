@@ -1,3 +1,17 @@
+if status is-interactive && string match  -erq '3\.[6-9].*' "$FISH_VERSION"
+    echo
+    echo "As of $(set_color purple)fish 3.6.0$(set_color normal), the two built-in functions $(set_color blue)fish_clipboard_copy$(set_color normal) and"
+    echo "$(set_color blue)fish_clipboard_paste$(set_color normal) effectively make using $(set_color purple)giorgiga/cwcr$(set_color normal) superfluous."
+    echo
+    echo "Please uninstall $(set_color purple)cwcr$(set_color normal) and consider aliasing the new functions as $(set_color purple)cw$(set_color normal) and $(set_color purple)cr$(set_color normal),"
+    echo "for example by running:"
+    echo
+    echo "    $(set_color green)fisher remove giorgiga/cwcr$(set_color normal)"
+    echo "    $(set_color green)alias -s cw fish_clipboard_copy$(set_color normal)"
+    echo "    $(set_color green)alias -s cr fish_clipboard_paste$(set_color normal)"
+    echo
+end
+
 if set -q WAYLAND_DISPLAY
     command -sq wl-copy wl-paste
     or echo 'cwcr: you need to install wl-clipboard'

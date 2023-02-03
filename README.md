@@ -2,6 +2,16 @@
 
 *clipboard write, clipboard read*, a [fish shell](https://fishshell.com/) facade to interact with the clipboard.
 
+As of fish 3.6.0, the two built-in functions `fish_clipboard_copy` and `fish_clipboard_paste` effectively make using `giorgiga/cwcr` superfluous.
+
+Please consider uninstalling *cwcr* and aliasing the new functions as `cw` and `cr`, for example by running:
+
+```fish
+fisher remove giorgiga/cwcr
+alias -s cw fish_clipboard_copy
+alias -s cr fish_clipboard_paste
+```
+
 ## Installation
 
 ### Using [Fisher](https://github.com/jorgebucaran/fisher)
